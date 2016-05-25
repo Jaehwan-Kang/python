@@ -33,7 +33,7 @@ print(cursor.fetchall())
 
 cursor.execute("select * from animal where no=1")
 row = cursor.fetchone()
-print('No 1 is ' + row[1];)
+print('No 1 is ' + row[1])
 
 # 종료
 cursor.close()
