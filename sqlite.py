@@ -20,7 +20,7 @@ print('Last rowid: ' + str(cursor, lastrowid))
 print('Row count: ' + str(cursor, rowcount))
 
 # 쿼리
- cursor.excute("select * from animal")
+cursor.excute("select * from animal")
 
  for row in cursor:
      print(row[1])
