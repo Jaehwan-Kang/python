@@ -63,7 +63,7 @@ def start():
 
 	choice = raw_input("> ")
 
-	if choice == "left:
+	if choice == "left":
 		bear_room()
 	elif choice == "right":
 		cthulhu_room()
