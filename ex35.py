@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-frmo sys import exit
+from sys import exit
 
 def gold_room():
 	print("This is full of gold. How mych do you take?")
