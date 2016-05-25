@@ -1,42 +1,25 @@
 # -*- coding:utf8 -*-
+import sqlite3 as lite
+import sys
 
-import sqlite3
+con = None
 
-db = sqlite3.connect("test.db")
-cursor = db.cursor()
+try:
+    con = lite.connect('test.db')
 
-datas = [(1, "cheetah"), (2, "puma"), (3, "leopard")]
+    cur = con.cursor()
+    cur.execute('SELECT SQLITE_VERSION()')
 
-# 테이블 생성
-cursor.execute("create table animal(no, name)")
+    data = cur.fetchone()
 
-# 데이터 INSERT
-cursor.executemany("insert into animal values (?, ?)", datas)
+    print "SQLite version: %s" % data
 
-# 최종 Insert 된 rowid 출력
-print('Last rowid: ' + str(cursor, lastrowid))
+except lite.Error, e:
 
-# row count 출력
-print('Row count: ' + str(cursor, rowcount))
+    print "Error %s:" % e.args[0]
+    sys.exit(1)
 
-# 쿼리
-cursor.excute("select * from animal")
+finally:
 
-for row in cursor:
-    print(row[1])
-
-
-cursor.excute("update animal set name = 'jaguar' where no = 3")
-
-cursor.execute("select * from animal")
-print(cursor.fetchall())
-
-cursor.execute("select * from animal where no=1")
-row = cursor.fetchone()
-print('No 1 is ' + row[1])
-
-# 종료
-cursor.close()
-
-db.commit()
-db.close()
+    if con:
+        con.close()
