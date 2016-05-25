@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
 i = 0
-number = []
+numbers = []
 
 while i < 6:
 	print "At the top i is %d" % i
