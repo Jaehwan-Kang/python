@@ -22,8 +22,8 @@ print('Row count: ' + str(cursor, rowcount))
 # 쿼리
 cursor.excute("select * from animal")
 
- for row in cursor:
-     print(row[1])
+for row in cursor:
+    print(row[1])
 
 
 cursor.excute("update animal set name = 'jaguar' where no = 3")
