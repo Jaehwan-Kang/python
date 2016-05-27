@@ -5,3 +5,8 @@ def vartest(a):
 
 vartest(a)
 print(a)
+
+
+
+f = open("newfile.txt", 'w')
+f.close()
