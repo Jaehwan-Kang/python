@@ -7,6 +7,6 @@ def search(dirname):
         ext = os.path.splitext(full_filename)[-1]
         if ext == '.py':
             print(full_filename)
-        
 
-search("/root")
+
+search("/root/tmp/python")
