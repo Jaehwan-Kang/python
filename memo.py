@@ -10,7 +10,7 @@ if option == '-a':
     f.write('\n')
     f.close()
 
-elif opriotn == '-v':
+elif option == '-v':
     f = open('memo.txt')
     memo = f.read()
     f.close()
