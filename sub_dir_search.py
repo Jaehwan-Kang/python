@@ -13,7 +13,4 @@ def search(dirname):
                     print(full_filename)
     except PermissionError:
         pass
-
-
-
 search("/root")
