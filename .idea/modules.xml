@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://D:/Bashscripts/.idea/Bashscripts.iml" filepath="D:/Bashscripts/.idea/Bashscripts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bashscripts/.idea/bashscripts.iml" filepath="$PROJECT_DIR$/../bashscripts/.idea/bashscripts.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/python.iml" filepath="$PROJECT_DIR$/.idea/python.iml" />
     </modules>
   </component>
