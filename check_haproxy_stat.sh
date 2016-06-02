@@ -11,7 +11,7 @@ _HaproxyServer=$3
 _HaproxystatAUTH=$4
 _HaproyCSV="/usr/local/nagios/var/haproxy.stat"
 
-
+# dasffasdfsd
 if [ $# = 4 ]
         then
         /usr/bin/curl --user $_HaproxystatAUTH "$_HaproxyServer/;csv" > $_HaproyCSV 2>>/dev/null
