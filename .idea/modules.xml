@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://D:/LGhomeboy01_nginx/.idea/LGhomeboy01_nginx.iml" filepath="D:/LGhomeboy01_nginx/.idea/LGhomeboy01_nginx.iml" />
       <module fileurl="file://$PROJECT_DIR$/../bashscripts/.idea/bashscripts.iml" filepath="$PROJECT_DIR$/../bashscripts/.idea/bashscripts.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/python.iml" filepath="$PROJECT_DIR$/.idea/python.iml" />
     </modules>
