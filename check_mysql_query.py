@@ -10,7 +10,7 @@ cur = conn.cursor()
 
 cur.execute("show status like 'Threads_connected'")
 
-print(row[1])
+print(cur[1])
 
 cur.close()
 conn.close()
