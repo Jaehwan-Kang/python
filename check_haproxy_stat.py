@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#! /usr/bin/python
+# -*- coding: utf-8 -*-
 #
 # Usage
 # > python check_haproxy_stat.py [URL] [USER] [PASSWORD] [LISTENER]

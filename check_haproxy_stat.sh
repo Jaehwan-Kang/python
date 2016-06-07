@@ -5,13 +5,13 @@
 #
 #  ex) ./check_haproxy_stat.sh sumradio_http web3 "http://211.61.155.151:1936" "cyebiz:Cyebizadmin151"
 #
+
 _Checkpxname=$1
 _Checksvname=$2
 _HaproxyServer=$3
 _HaproxystatAUTH=$4
 _HaproyCSV="/usr/local/nagios/var/haproxy.stat"
 
-# dasffasdfsd
 if [ $# = 4 ]
         then
         /usr/bin/curl --user $_HaproxystatAUTH "$_HaproxyServer/;csv" > $_HaproyCSV 2>>/dev/null
