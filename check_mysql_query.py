@@ -11,7 +11,8 @@ cur.execute("show status like 'Threads_connected'")
 for row in cur:
 
     print(row[1])
-    
+    print(sys.argv[1])
+    print(sys.argv[2])
     if row[1] >= sys.argv[1] and row[1] < sys.argv[2]:
         print("Warning Connections %s" % row[1])
         sys.exit(1)
