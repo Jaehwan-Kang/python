@@ -8,6 +8,7 @@ conn = pymysql.connect(host='db.sumradio.com', port=3306, user='root', passwd='c
 cur = conn.cursor()
 result = cur.execute("show status like 'Threads_connected'")
 
+print(result)
 if result > sys.argv[1] and result < sys.argv[2]:
     print("Warning Connections %s" % result)
     sys.exit(1)
@@ -16,7 +17,7 @@ elif result > sys.argv[2]:
     sys.exit(2)
 else:
     print("O.K Connections %s" % result)
-    
+
 cur.close()
 conn.close()
 
