@@ -30,9 +30,11 @@
       <file leaf-file-name="check_mysql_query.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_mysql_query.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15550756">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-              <folding />
+            <state vertical-scroll-proportion="0.5183585">
+              <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+              <folding>
+                <element signature="e#43#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -843,9 +845,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check_mysql_query.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15550756">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding />
+        <state vertical-scroll-proportion="0.5183585">
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <folding>
+            <element signature="e#43#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
