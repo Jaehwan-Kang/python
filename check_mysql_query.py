@@ -8,9 +8,11 @@ conn = pymysql.connect(host='db.sumradio.com', port=3306, user='root', passwd='c
 
 cur = conn.cursor()
 
-cur.execute("show status like 'Threads_connected'")
+result = cur.execute("show status like 'Threads_connected'")
 
-print(cur[1])
+print(result[1])
+#for row in cur:
+#    print(row[1])
 
 cur.close()
 conn.close()
