@@ -6,6 +6,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="bashscripts" />
     <orderEntry type="module" module-name="LGhomeboy01_nginx" />
+    <orderEntry type="module" module-name="LGhomeboy02_nginx" />
+    <orderEntry type="module" module-name="LGhomeboy03_nginx" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

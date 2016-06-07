@@ -3,11 +3,10 @@
 # Usage
 # > python check_haproxy_stat.py [URL] [USER] [PASSWORD] [LISTENER]
 #
-# Example
-# > python check_haproxy_stat.py 211.61.155.206:1936 cyebiz Cyebizadmin151 lg-homeboy01
 
 import sys
 from haproxystats import HAProxyServer
+
 haproxy = HAProxyServer(sys.argv[1], sys.argv[2], sys.argv[3], timeout=3)
 
 listner = {}
