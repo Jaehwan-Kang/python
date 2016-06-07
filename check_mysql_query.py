@@ -3,7 +3,7 @@
 
 import pymysql
 
-conn = pymysql.connect(host='db.sumradio.com', port=3306, user='root', passwd='cy.admin.235', db='content')
+conn = pymysql.connect(host='db.sumradio.com', port=3306, user='root', passwd='cy.admin.235', db='information_schema')
 
 cur = conn.cursor()
 
