@@ -10,7 +10,7 @@ result = cur.execute("show status like 'Threads_connected'")
 cur.close()
 conn.close()
 
-if sys.argv[1] < result < sys.argv[2]:
+if result > sys.argv[1] and result < sys.argv[2]:
     print("Warning Connections %s" % result)
     sys.exit(1)
 elif result > sys.argv[2]:
