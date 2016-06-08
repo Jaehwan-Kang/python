@@ -8,7 +8,7 @@ cur = conn.cursor()
 cur.execute("show status like 'Threads_connected'")
 
 for row in cur:
-    if row[1] >= sys.argv[1] and row[1] < sys.argv[2]:
+    if row[1] >= sys.argv[4] and row[1] < sys.argv[5]:
         print("Warning Connections %s" % row[1])
         cur.close()
         conn.close()
