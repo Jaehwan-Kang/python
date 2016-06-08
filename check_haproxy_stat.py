@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 #
 # Usage
-# > python check_haproxy_stat.py [URL] [USER] [PASSWORD] [LISTENER]
+# #python check_haproxy_stat.py [URL] [USER] [PASSWORD] [LISTENER]
 #
-
 import sys
 from haproxystats import HAProxyServer
 
