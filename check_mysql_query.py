@@ -14,8 +14,8 @@ for row in cur:
         conn.close()
         sys.exit(1)
     elif row[1] >= sys.argv[5]:
-        type(row[1])
-        type(sys.argv[5])
+        print(type(row[1]))
+        print(type(sys.argv[5]))
         print("Critical Connectios %s" % row[1])
         cur.close()
         conn.close()
