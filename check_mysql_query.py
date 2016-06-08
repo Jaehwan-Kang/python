@@ -3,9 +3,9 @@
 
 import pymysql, sys
 
-conn = pymysql.connect(host=sys.argv[1], port=3306, user=sys.argv[2], passwd=sys.argv[3], db='mysql')
+conn = pymysql.connect(host=sys.argv[1], port=3306, user=sys.argv[2], passwd=sys.argv[3], db='information_schema')
 cur = conn.cursor()
-cur.execute("show status like 'Threads_connected'")
+cur.execute("select count(ID) from PROCESSLIT")
 
 for row in cur:
     if int(row[1]) >= int(sys.argv[4]) and int(row[1]) < int(sys.argv[5]):
