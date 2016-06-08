@@ -13,13 +13,13 @@ for row in cur:
         cur.close()
         conn.close()
         sys.exit(1)
-    elif row[1] >= sys.argv[2]:
+    elif row[1] >= sys.argv[5]:
         print("Critical Connectios %s" % row[1])
         cur.close()
         conn.close()
         sys.exit(2)
     else:
         print("O.K Connections %s" % row[1])
-        sys.exit(0)
         cur.close()
         conn.close()
+        sys.exit(0)
