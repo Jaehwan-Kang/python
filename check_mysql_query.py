@@ -7,7 +7,10 @@ conn = pymysql.connect(host=sys.argv[1], port=3306, user=sys.argv[2], passwd=sys
 cur = conn.cursor()
 cur.execute("show status like 'Threads_connected'")
 
-for row in cur:
+row = []
+row = cur
+print(row[1])
+#for row in cur:
     if row[1] >= sys.argv[4] and row[1] < sys.argv[5]:
         print("Warning Connections %s" % row[1])
         cur.close()
