@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import pymysql, sys
-import sys
 
-conn = pymysql.connect(host='db.sumradio.com', port=3306, user='root', passwd='cy.admin.235', db='mysql')
+conn = pymysql.connect(host=sys.argv[1], port=3306, user=sys.argv[2], passwd=sys.argv[3], db='mysql')
 cur = conn.cursor()
 cur.execute("show status like 'Threads_connected'")
 
