@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://D:/LGhomeboy01_nginx/.idea/LGhomeboy01_nginx.iml" filepath="D:/LGhomeboy01_nginx/.idea/LGhomeboy01_nginx.iml" />
+      <module fileurl="file://D:/LGhomeboy02_nginx/.idea/LGhomeboy02_nginx.iml" filepath="D:/LGhomeboy02_nginx/.idea/LGhomeboy02_nginx.iml" />
+      <module fileurl="file://D:/LGhomeboy03_nginx/.idea/LGhomeboy03_nginx.iml" filepath="D:/LGhomeboy03_nginx/.idea/LGhomeboy03_nginx.iml" />
+      <module fileurl="file://D:/Nagios/.idea/Nagios.iml" filepath="D:/Nagios/.idea/Nagios.iml" />
+      <module fileurl="file://D:/TEMP/.idea/TEMP.iml" filepath="D:/TEMP/.idea/TEMP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../bashscripts/.idea/bashscripts.iml" filepath="$PROJECT_DIR$/../bashscripts/.idea/bashscripts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/python.iml" filepath="$PROJECT_DIR$/.idea/python.iml" />
+    </modules>
+  </component>
+</project>

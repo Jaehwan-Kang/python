@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Nagios" />
+    <orderEntry type="module" module-name="LGhomeboy01_nginx" />
+    <orderEntry type="module" module-name="LGhomeboy02_nginx" />
+    <orderEntry type="module" module-name="LGhomeboy03_nginx" />
+    <orderEntry type="module" module-name="bashscripts" />
+    <orderEntry type="module" module-name="TEMP" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
+  </component>
+</module>
