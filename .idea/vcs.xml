@@ -3,6 +3,15 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../bashscripts" vcs="Git" />
+    <mapping directory="D:/LGTeamBoxCloud/teambox-api01" vcs="Git" />
+    <mapping directory="D:/LGTeamBoxCloud/teambox-api02" vcs="Git" />
+    <mapping directory="D:/LGTeamBoxCloud/teambox-api03" vcs="Git" />
+    <mapping directory="D:/LGTeamBoxCloud/teambox-api04" vcs="Git" />
+    <mapping directory="D:/LGTeamBoxCloud/teambox-api05" vcs="Git" />
+    <mapping directory="D:/LGTeamBoxCloud/teambox-api06" vcs="Git" />
+    <mapping directory="D:/LGTeamBoxCloud/teambox-homepage01" vcs="Git" />
+    <mapping directory="D:/LGTeamBoxCloud/teambox-homepage02" vcs="Git" />
+    <mapping directory="D:/LGTeamBoxCloud/teambox-img" vcs="Git" />
     <mapping directory="D:/LGhomeboy01_nginx" vcs="Git" />
     <mapping directory="D:/LGhomeboy02_nginx" vcs="Git" />
     <mapping directory="D:/LGhomeboy03_nginx" vcs="Git" />

@@ -11,6 +11,15 @@
     <orderEntry type="module" module-name="bashscripts" />
     <orderEntry type="module" module-name="TEMP" />
     <orderEntry type="module" module-name="teambox-dev" />
+    <orderEntry type="module" module-name="teambox-img" />
+    <orderEntry type="module" module-name="teambox-api01" />
+    <orderEntry type="module" module-name="teambox-api02" />
+    <orderEntry type="module" module-name="teambox-api03" />
+    <orderEntry type="module" module-name="teambox-api04" />
+    <orderEntry type="module" module-name="teambox-api05" />
+    <orderEntry type="module" module-name="teambox-api06" />
+    <orderEntry type="module" module-name="teambox-homepage01" />
+    <orderEntry type="module" module-name="teambox-homepage02" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
