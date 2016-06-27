@@ -21,7 +21,7 @@ class teamboxBakcup:
         dbuser = ""
         dbpasswd = ""
         date = datetime.date.today()
-        os.popen("mysqldump -u %s -p%s -h %s %s > %s/%s.%s.sql" % (dbuser, dbpasswd, dbhost, db, dbdir, date, db))
+        os.popen("/usr/local/mysql/bin/mysqldump -u %s -p%s -h %s %s > %s/%s.%s.sql" % (dbuser, dbpasswd, dbhost, db, dbdir, date, db))
 
     # 웹소스 백업 함수(os 명령어 이용한 tar 압축)
     def webbackup(self):
@@ -29,7 +29,7 @@ class teamboxBakcup:
         date = datetime.date.today()
         os.popen("tar zcf %s/teambox.%s.tgz %s" % (webdir, date, target))
 
-    # 이미지 백업 함수 (paramiko 이용한 scp)
+    # 이미지 백업 함수 (pysftp)
     def imgbackup(self):
         date = datetime.date.today()
         DIR = imgdir + "/" + str(date) + "/"
