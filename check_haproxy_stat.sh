@@ -3,7 +3,6 @@
 #
 #  Usage #check_haproxy_stat.sh [pxname] [svname] [haproxyserver URL or IP] [Auth info]
 #
-#  ex) ./check_haproxy_stat.sh sumradio_http web3 "http://211.61.155.151:1936" "cyebiz:Cyebizadmin151"
 #
 
 _Checkpxname=$1
