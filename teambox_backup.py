@@ -37,8 +37,6 @@ class teamboxBakcup:
 
         with pysftp.Connection('host', username="", password="", port=) as sftp:
             with sftp.cd('/home/teambox/'):
-                #sftp.get('/home/teambox/public_html')
-
                 sftp.get_r('public_html', DIR, preserve_mtime=True,)
         sftp.close()
 
