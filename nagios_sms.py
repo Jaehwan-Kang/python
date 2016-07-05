@@ -31,9 +31,7 @@ class nagiosStatParsing:                                                        
         for item in nagiPar["servicestatus"]:
             if 1 == item["current_state"]:                                      # current_state : 1 = WARNING
                 w_list.append(item["host_name"])                                # Make Waring List
-
-        result = json.dumps(w_list)
-        return result
+        return w_list
 
     def CRI(self):
         global nagiPar
@@ -41,19 +39,16 @@ class nagiosStatParsing:                                                        
         for item in nagiPar["servicestatus"]:
             if 2 == item["current_state"]:                                      # current_state : 2 = CRITICAL
                 c_list.append(item["host_name"])                                # Make Critical List
-
-        result = json.dumps(c_list)
-        return result
+        return c_list
 
 ## Checking LIST
-e = nagiosStatParsing()
 
+e = nagiosStatParsing()
 W = e.WAR()
 C = e.CRI()
 
 print(W)
 print(C)
-
 ##############
 #            #
 #  Send SMS  #
