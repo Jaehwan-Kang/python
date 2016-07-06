@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://D:/Haproxy/.idea/Haproxy.iml" filepath="D:/Haproxy/.idea/Haproxy.iml" />
       <module fileurl="file://D:/LGhomeboy01_nginx/.idea/LGhomeboy01_nginx.iml" filepath="D:/LGhomeboy01_nginx/.idea/LGhomeboy01_nginx.iml" />
       <module fileurl="file://D:/LGhomeboy02_nginx/.idea/LGhomeboy02_nginx.iml" filepath="D:/LGhomeboy02_nginx/.idea/LGhomeboy02_nginx.iml" />
       <module fileurl="file://D:/LGhomeboy03_nginx/.idea/LGhomeboy03_nginx.iml" filepath="D:/LGhomeboy03_nginx/.idea/LGhomeboy03_nginx.iml" />

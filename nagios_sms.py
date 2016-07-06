@@ -17,14 +17,8 @@ import json, subprocess, requests
 #
 #
 
-# Parsing JSON from status.dat
-nagiStat = subprocess.check_output(['nagios-status-parser /usr/local/nagios/var/status.dat'], shell=True)
-#nagiPar = json.dumps(nagiStat)
-nagiPar = json.loads(nagiStat)
-#nagiPar = json.dumps(json.loads(nagiStat))
-
-class nagiosStatParsing:                                                        # Nagios Status Class
-
+# Nagios Status Class
+class nagiosStatParsing:
     def WAR(self):
         global nagiPar
         w_list = []                                                             # Empty list
@@ -41,14 +35,27 @@ class nagiosStatParsing:                                                        
                 c_list.append(item["host_name"])                                # Make Critical List
         return c_list
 
-## Checking LIST
+# Check && DATA Insert
+def status(chk):
+    if 0 < len(chk):
+        print(chk)
+    else:
+        print(" 0 ")
 
+# Parsing JSON from status.dat
+nagiStat = subprocess.check_output(['nagios-status-parser /usr/local/nagios/var/status.dat'], shell=True)
+nagiPar = json.loads(nagiStat)
+
+# Export list
 e = nagiosStatParsing()
 W = e.WAR()
 C = e.CRI()
 
-print(W)
-print(C)
+# Check status
+status(W)
+status(C)
+
+
 ##############
 #            #
 #  Send SMS  #
@@ -65,7 +72,7 @@ NagiosMSG = 'Wow Sssssss'
 def SendSMS(phone, nagiosMessage):
     url = 'http://sms.cyebiz.com/sms_send.php'
 
-    payload = {
+    postdata = {
         'type':'sms',
         'returnurl':'',
         'reserve':'0',
@@ -78,7 +85,7 @@ def SendSMS(phone, nagiosMessage):
         'etc2':'',
         'timeout':'3'
     }
-    r = requests.post(url, data=payload)
+    r = requests.post(url, data=postdata)
 
 #SendSMS(phone_number, NagiosMSG)
 

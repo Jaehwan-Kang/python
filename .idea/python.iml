@@ -20,6 +20,7 @@
     <orderEntry type="module" module-name="teambox-api06" />
     <orderEntry type="module" module-name="teambox-homepage01" />
     <orderEntry type="module" module-name="teambox-homepage02" />
+    <orderEntry type="module" module-name="Haproxy" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
