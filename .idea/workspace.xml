@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d59660c-1502-411b-b2b0-a237a5e1a284" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/python.iml" afterPath="$PROJECT_DIR$/.idea/python.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nagios_sms.py" afterPath="$PROJECT_DIR$/nagios_sms.py" />
     </list>
@@ -30,8 +27,8 @@
       <file leaf-file-name="nagios_sms.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nagios_sms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.5309734">
-              <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.4159292">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,10 +96,10 @@
         <option value="D:/TEMP/test.py" />
         <option value="D:/Nagios/objects/namu.cfg" />
         <option value="$PROJECT_DIR$/../bashscripts/haproxy.cfg" />
-        <option value="$PROJECT_DIR$/nagios_sms.py" />
         <option value="D:/LGhomeboy03_nginx/conf.d/homeboy.conf" />
         <option value="D:/LGhomeboy02_nginx/conf.d/homeboy.conf" />
         <option value="D:/LGhomeboy01_nginx/conf.d/homeboy.conf" />
+        <option value="$PROJECT_DIR$/nagios_sms.py" />
       </list>
     </option>
   </component>
@@ -827,8 +824,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nagios_sms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5309734">
-          <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.4159292">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
