@@ -45,7 +45,11 @@ class sqlitedb:                                         # sqlitedb 클래스
         conn = sqlite3.connect('/root/nagios.db')       # 디비 설정
         c = conn.cursor()
 
+        c.execute(table_query)                          # 현재 디비내에 있는 모든 테이블명 조회
+        tablelist = c.fetchall()                        # 조회된 값을 list 로 변경
+
         if 0 < len(Hosts):                              # Update 인자로 받은 리스트내 값들의 수가 0보다 클 경우, 즉 리스트내에 값이 있을경우
+
             for name, item in Hosts.items():
                 name = name.replace(" ","")             # HostName 의 공백제거
 
@@ -56,6 +60,7 @@ class sqlitedb:                                         # sqlitedb 클래스
 
                 c.execute(real_query % name)            # HostName 명을 가진 테이블 확인 (0 = 없음, 1 = 있음)
                 r = c.fetchone()
+
                 if 0 == r[0]:                           # 튜플로 받아온 값 판별하여 (0) 테이블이 없을 경우
                     c.execute(create_query % name)      # 테이블 생성
                     c.execute(query % name)             # 테이블 생성 후 데이터 입력
@@ -63,12 +68,14 @@ class sqlitedb:                                         # sqlitedb 클래스
                 else:
                     c.execute(query % name)             # 튜플로 받아온 값 (1) 테이블이 있을 경우 그대로 데이터 입력
                     conn.commit()                       # COMMIT
-        else:                                           # Update 인자로 받은 리스트내 값들의 수가 0일 경우, 즉 리스트내에 값이 없을 경우
-            tablelist = list(c.execute(table_query))    # 현재 디비내에 있는 모든 테이블명 조회
-            for table in tablelist:
-                c.execute(null_query % table)           # 테이블마다 Null 값 데이터 입력(sms 발송여부 판단 위해 마지막 데이터 값을 판단하므로)
-                conn.commit()                           # COMMIT
 
+            for table in tablelist:                     # 상단 (A)에서 갱신된 tablelist 이용
+                c.execute(null_query % table)           # 갱신된 테이블목록으로 각각 Null 값 데이터 입력(sms 발송여부 판단 위해 마지막 데이터 값을 판단하므로)
+                conn.commit()                           # COMMIT
+        else:                                           # Update 인자로 받은 리스트내 값들의 수가 0, 0보다 작을 경우, 즉 리스트내에 값이 없을경우
+            for table in tablelist:
+                c.execute(null_query % table)           # 모든 테이블에 Null 값 데이터 입력(sms 발송여부 판단 위해 마지막 데이터 값을 판단하므로)
+                conn.commit()                           # COMMIT
         conn.close()
 
 ##############
