@@ -46,12 +46,21 @@ class sqlitedb:                                         # sqlitedb 클래스
         c = conn.cursor()
 
         c.execute(table_query)                          # 현재 디비내에 있는 모든 테이블명 조회
-        tablelist = c.fetchall()                        # 조회된 값을 list 로 변경
+        tablelist = c.fetchall()                        # 조회된 값을 list 로 변경 **주의 : list이나 값들은 tuple!!!!!
+
+        updatetablelist = []                            # updatetablelist 초기화
+        for x in tablelist:                             # (A-0)조회된 전체 테이블 목록은 tuple 형태로 이를 list로 변환
+            x = str(x)
+            updatetablelist.append(x)
 
         if 0 < len(Hosts):                              # Update 인자로 받은 리스트내 값들의 수가 0보다 클 경우, 즉 리스트내에 값이 있을경우
 
             for name, item in Hosts.items():
                 name = name.replace(" ","")             # HostName 의 공백제거
+
+                name2 = "(u\'%s\',)" % name             # (A-1)
+                I = updatetablelist.index(name2)        # (A-1) list 로 변환된 테이블명에서 이벤트발생된 HostName 제외
+                del updatetablelist[I]                  # (A-1) 이벤트 발생된 HostName 삭제
 
                 if 1 == item:                           # Hosts DIC의 item = 1 일 경우 insert_w_query 사용
                     query = insert_w_query
@@ -69,13 +78,17 @@ class sqlitedb:                                         # sqlitedb 클래스
                     c.execute(query % name)             # 튜플로 받아온 값 (1) 테이블이 있을 경우 그대로 데이터 입력
                     conn.commit()                       # COMMIT
 
-            for table in tablelist:                     # 상단 (A)에서 갱신된 tablelist 이용
-                c.execute(null_query % table)           # 갱신된 테이블목록으로 각각 Null 값 데이터 입력(sms 발송여부 판단 위해 마지막 데이터 값을 판단하므로)
+            for table in updatetablelist:               # (A-2) (A-1) 에서 갱신된 updatetablelist 이용
+                table = table.replace("(u\'","")
+                table = table.replace("\',)","")
+                c.execute(null_query % table)           # (A-2)갱신된 테이블목록으로 각각 Null 값 데이터 입력(sms 발송여부 판단 위해 마지막 데이터 값을 판단하므로)
                 conn.commit()                           # COMMIT
         else:                                           # Update 인자로 받은 리스트내 값들의 수가 0, 0보다 작을 경우, 즉 리스트내에 값이 없을경우
+
             for table in tablelist:
                 c.execute(null_query % table)           # 모든 테이블에 Null 값 데이터 입력(sms 발송여부 판단 위해 마지막 데이터 값을 판단하므로)
                 conn.commit()                           # COMMIT
+
         conn.close()
 
 ##############
