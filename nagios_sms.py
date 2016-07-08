@@ -107,6 +107,9 @@ NagiosMSG = 'Wow Sssssss'
 def SendSMS(phone, nagiosMessage):
     url = 'http://sms.cyebiz.com/sms_send.php'
 
+    headers = {
+        'User-Agent': 'CYEBIZ/1.0'
+    }
     postdata = {
         'type':'sms',
         'returnurl':'',
@@ -120,9 +123,9 @@ def SendSMS(phone, nagiosMessage):
         'etc2':'',
         'timeout':'3'
     }
-    r = requests.post(url, data=postdata)
+    r = requests.post(url, headers=headers, data=postdata)
 
-#SendSMS(phone_number, NagiosMSG)
+SendSMS(phone_number, NagiosMSG)
 
 #################
 #               #
@@ -135,9 +138,9 @@ nagiStat = subprocess.check_output(['nagios-status-parser /usr/local/nagios/var/
 nagiPar = json.loads(nagiStat)
 
 # Export list
-e = nagiosStatParsing()
-E = e.sorting()
+#e = nagiosStatParsing()
+#E = e.sorting()
 
 # Check status
-e2 = sqlitedb()
-e2.Update(E)
+#e2 = sqlitedb()
+#e2.Update(E)

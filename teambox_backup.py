@@ -18,10 +18,12 @@ class teamboxBakcup:
     def dbbackup(self):
         dbhost = ""
         db = ""
+        db2 = ""
         dbuser = ""
         dbpasswd = ""
         date = datetime.date.today()
         os.popen("/usr/local/mysql/bin/mysqldump -u %s -p%s -h %s %s > %s/%s.%s.sql" % (dbuser, dbpasswd, dbhost, db, dbdir, date, db))
+        os.popen("/usr/local/mysql/bin/mysqldump -u %s -p%s -h %s %s > %s/%s.%s.sql" % (dbuser, dbpasswd, dbhost, db2, dbdir, date, db2))
 
     # 웹소스 백업 함수(os 명령어 이용한 tar 압축)
     def webbackup(self):
