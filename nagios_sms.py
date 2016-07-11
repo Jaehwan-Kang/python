@@ -13,6 +13,11 @@
 #   prompt>> pip install subprocess requests sqlite3
 #   prompt>> nagios-status-parser /usr/local/nagios/var/status.dat
 #
+#  [Example]
+#   /etc/crontab
+#   # 5분마다 실행
+#   */5 * * * * root /root/nagios_sms.py
+#
 
 
 import json, subprocess, requests, sqlite3              # Load Modules
