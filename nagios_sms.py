@@ -84,6 +84,9 @@ class sqlitedb:                                         # sqlitedb 클래스
                     c.execute(query % name)             # 튜플로 받아온 값 (1) 테이블이 있을 경우 그대로 데이터 입력
                     conn.commit()                       # COMMIT
 
+            c.execute(table_query)                      # 현재 디비내에 있는 모든 테이블명 조회
+            tablelist = c.fetchall()                    # !!! 윗단 업데이트 쿼리 후에 재 조회
+
             updatetablelist = []                        # updatetablelist 초기화
             for x in tablelist:                         # (A-0)조회된 전체 테이블 목록은 tuple 형태로 이를 list로 변환
                 x = str(x)
