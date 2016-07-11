@@ -60,6 +60,9 @@ class sqlitedb:                                         # sqlitedb 클래스
         conn = sqlite3.connect('/root/nagios.db')       # 디비 설정
         c = conn.cursor()
 
+        c.execute(table_query)                          # 현재 디비내에 있는 모든 테이블명 조회
+        tablelist = c.fetchall()                        # 조회된 값을 list 로 변경 **주의 : list이나 값들은 tuple!!!!!
+
         if 0 < len(Hosts):                              # Update 인자로 받은 리스트내 값들의 수가 0보다 클 경우, 즉 리스트내에 값이 있을경우
 
             for name, item in Hosts.items():
@@ -81,16 +84,12 @@ class sqlitedb:                                         # sqlitedb 클래스
                     c.execute(query % name)             # 튜플로 받아온 값 (1) 테이블이 있을 경우 그대로 데이터 입력
                     conn.commit()                       # COMMIT
 
-                                                        # !!!! 바로 위에서 insert 쿼리가 실행된 후에 아래가 진행되야함 !!!!!
-            c.execute(table_query)                      # 현재 디비내에 있는 모든 테이블명 조회
-            tablelist = c.fetchall()                    # 조회된 값을 list 로 변경 **주의 : list이나 값들은 tuple!!!!!
-
             updatetablelist = []                        # updatetablelist 초기화
             for x in tablelist:                         # (A-0)조회된 전체 테이블 목록은 tuple 형태로 이를 list로 변환
                 x = str(x)
                 updatetablelist.append(x)
 
-            for name in Hosts.keys():
+            for name in Hosts.keys():                   # !!!! 윗단에서 insert 쿼리가 실행된 후에 아래가 진행되야함 !!!!!
                 name = name.replace(" ","")
                 name2 = "(u\'%s\',)" % name             # (A-1)
                 I = updatetablelist.index(name2)        # (A-1) list 로 변환된 테이블명에서 이벤트발생된 HostName 제외
