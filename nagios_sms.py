@@ -128,12 +128,14 @@ class sqlitedb:                                         # sqlitedb 클래스
                 table = table.replace("(u\'","")        # 문자열 가공
                 table = table.replace("\',)","")        # 문자열 가공
                 last_list.append(table)                 # last_list 에 LIST UP
+        conn.close()
 
         s1 = set(now_list)                              # 현재 event 발생된 host 리스트
         s2 = set(last_list)                             # 디비 내 마지막(5분전) 에 event가 있었던 host 리스트
         s3 = s1 & s2                                    # 위의 2개 리스트의 교집합. 중복된.  즉, 10분간 event 가 발생된 것으로 간주된 Host 확인
         result = len(s3)                                # 10분간 event 발생된 Host의 수량 return
         return result
+
 
 ##############
 #            #
