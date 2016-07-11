@@ -1,10 +1,19 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
+#   Nagios_sms.py  - kang.jh@cyebiz.com
+#
+#   Nagios  : status.dat
+#   SQLite3 : /root/nagios.db
+#   SMS     : sms.cyebiz.com
+#
 #  [Ready]
+#   prompt>> yum -y install npm python python-pip
 #   prompt>> npm install -g nagios-status-parser
+#   prompt>> pip install subprocess requests sqlite3
 #   prompt>> nagios-status-parser /usr/local/nagios/var/status.dat
 #
+
 
 import json, subprocess, requests, sqlite3              # Load Modules
 
