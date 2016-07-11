@@ -159,8 +159,8 @@ def SendSMS(phone, nagiosMessage):
 
     NagiosMSG = nagiosMessage
 
-    url = 'http://sms.cyebiz.com/sms_send.php'
-
+#    url = 'http://sms.cyebiz.com/sms_send.php'
+    url = 'http://sms.cyebiz.com/send'
     headers = {
         'user-agent': 'CYEBIZ/1.0'
     }
@@ -172,7 +172,8 @@ def SendSMS(phone, nagiosMessage):
         'phone': phone_number,
         'msg': NagiosMSG,
         'callback':'0263423352',
-        'apikey':'8a1b076d4da59d51eac3d59a2903c744',
+#        'apikey':'8a1b076d4da59d51eac3d59a2903c744',
+        'apikey':'3047b19ef0b179b867727715093a9fe6',
         'etc1':'',
         'etc2':'',
         'timeout':'3'
