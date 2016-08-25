@@ -1,3 +1,5 @@
+{"homeboy-2016.07.18":{"mappings":{"nginx":{"properties":{"@fields":{"properties":{"ip":{"type":"string"},"referrer":{"type":"string"},"request":{"type":"string"},"request-time":{"type":"string"},"status":{"type":"string"},"user-agent":{"type":"string"}}},"@time":{"type":"date","format":"strict_date_optional_time||epoch_millis"},"@timestamp":{"type":"date","format":"strict_date_optional_time||epoch_millis"},"@version":{"type":"string"},"geoip":{"properties":{"area_code":{"type":"long"},"city_name":{"type":"string"},"continent_code":{"type":"string"},"country_code2":{"type":"string"},"country_code3":{"type":"string"},"country_name":{"type":"string"},"dma_code":{"type":"long"},"ip":{"type":"string"},"latitude":{"type":"double"},"location":{"type":"double"},"longitude":{"type":"double"},"real_region_name":{"type":"string"},"region_name":{"type":"string"},"timezone":{"type":"string"}}},"host":{"type":"string"},"path":{"type":"string"},"tags":{"type":"string"},"type":{"type":"string"}}}}}}
+
 {
     "211.61.155.151": {
         "backends": [
