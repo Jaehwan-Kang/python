@@ -203,6 +203,8 @@ e2.Update(E)
 # Event SMS Sending
 recv_phone = "01028241085"
 #recv_phone = "01028241085,010xxxxxxxx"
+
 if 0 < event:
     msg = "Event Hosts : %s" % event
-    SendSMS(recv_phone, msg)
+    print(msg)
+#    SendSMS(recv_phone, msg)
