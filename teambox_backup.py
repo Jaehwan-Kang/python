@@ -45,7 +45,7 @@ class teamboxBakcup:
     def imgbackup(self):
         DIR = imgdir + "/" + str(date) + "/"
         os.mkdir(DIR)
-        os.open("/usr/bin/rm -rf %s/%s" % (imgdir, rdate))
+        os.popen("/usr/bin/rm -rf %s/%s" % (imgdir, rdate))
 
         with pysftp.Connection('host', username="", password="", port=) as sftp:
             with sftp.cd('/home/teambox/'):
