@@ -38,8 +38,11 @@ class teamboxBakcup:
     # 웹소스 백업 함수(os 명령어 이용한 tar 압축)
     def webbackup(self):
         target = "/home/teambox/public_html"
+        target2 = "/GitDATA/repositories"
         os.popen("tar zcf %s/teambox.%s.tgz %s" % (webdir, date, target))
+        os.popen("tar jcf %s/repositories.%s.bz2 %s" % (webdir, date, target2))
         os.popen("/usr/bin/rm -rf %s/teambox.%s.tgz" % (webdir, rdate))
+        os.popen("/usr/bin/rm -rf %s/repositories.%s.bz2" % (webdir, rdate))
 
     # 이미지 백업 함수 (pysftp)
     def imgbackup(self):
