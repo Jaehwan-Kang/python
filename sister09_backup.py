@@ -17,12 +17,10 @@ TARGET = sys.argv[1]
 
 # 백업 클래스
 class Bakcup:
-
-    date = datetime.date.today()
-    rdate = date - datetime.timedelta(weeks=12)
-
     # 디비 백업 함수 (os 명령어 이용한 mysqldump)
     def dbbackup(self):
+        date = datetime.date.today()
+        rdate = date - datetime.timedelta(weeks=12)
         dbhost = ""
         db = ""
         db2 = ""
@@ -37,6 +35,9 @@ class Bakcup:
 
     # 웹소스 백업 함수(os 명령어 이용한 tar 압축)
     def webbackup(self):
+        date = datetime.date.today()
+        rdate = date - datetime.timedelta(weeks=12)
+
         target = [ 'baby09', 'sister09', 'thankyoudealer']
 
         for i in target:
@@ -45,6 +46,9 @@ class Bakcup:
 
     # 설정파일 백업 함수
     def confbackup(self):
+        date = datetime.date.today()
+        rdate = date - datetime.timedelta(weeks=12)
+
         os.popen("tar jcf %s/nginx_%s.bz2 /etc/nginx" % (confdir, date))
         os.popen("tar jcf %s/php_%s.bz2 /etc/php*" % (confdir, date))
 

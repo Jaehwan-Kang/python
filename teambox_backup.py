@@ -18,11 +18,12 @@ TARGET = sys.argv[1]
 # 백업 클래스
 class teamboxBakcup:
 
-    date = datetime.date.today()
-    rdate = date - datetime.timedelta(weeks=12)
-
     # 디비 백업 함수 (os 명령어 이용한 mysqldump)
     def dbbackup(self):
+
+        date = datetime.date.today()
+        rdate = date - datetime.timedelta(weeks=12)
+
         dbhost = ""
         db = ""
         db2 = ""
@@ -37,6 +38,10 @@ class teamboxBakcup:
 
     # 웹소스 백업 함수(os 명령어 이용한 tar 압축)
     def webbackup(self):
+
+        date = datetime.date.today()
+        rdate = date - datetime.timedelta(weeks=12)
+
         target = "/home/teambox/public_html"
         target2 = "/GitDATA/repositories"
         os.popen("tar zcf %s/teambox.%s.tgz %s" % (webdir, date, target))
@@ -46,6 +51,10 @@ class teamboxBakcup:
 
     # 이미지 백업 함수 (pysftp)
     def imgbackup(self):
+
+        date = datetime.date.today()
+        rdate = date - datetime.timedelta(weeks=12)
+
         DIR = imgdir + "/" + str(date) + "/"
         os.mkdir(DIR)
         os.popen("/usr/bin/rm -rf %s/%s" % (imgdir, rdate))
