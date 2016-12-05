@@ -38,10 +38,10 @@ class Bakcup:
         date = datetime.date.today()
         rdate = date - datetime.timedelta(weeks=12)
 
-        target = [ 'baby09', 'sister09', 'thankyoudealer']
+        target = ('baby09', 'sister09', 'thankyoudealer')
 
         for i in target:
-            os.popen("tar jcf %s/%s.%s.bz2 /home/%s --exclude=sess_*" % (webdir, i, date, target))
+            os.popen("tar jcf %s/%s.%s.bz2 /home/%s --exclude=sess_*" % (webdir, i, date, i))
             os.popen("rm -rf %s/%s.%s.bz2" % (webdir, i, rdate))
 
     # 설정파일 백업 함수
