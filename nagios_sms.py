@@ -173,7 +173,7 @@ def SendSMS(phone, nagiosMessage):
         'phone': phone_number,
         'msg': NagiosMSG,
         'callback':'0263423352',
-        'apiKey':'3047b19ef0b179b867727715093a9fe6',        # api'K'ey 대문자여야함
+        'apiKey':'',        # api'K'ey 대문자여야함
         'etc1':'',
         'etc2':'',
         'timeout':'3'
