@@ -1,11 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-#   Nagios_sms.py  - kang.jh@cyebiz.com
+#   sms.py(Python2.x)  - kang.jh@cyebiz.com
 #
 #   Nagios  : status.dat
 #   SQLite3 : /root/nagios.db
 #   SMS     : sms.cyebiz.com
+#
 #
 #  [Ready]
 #   prompt>> yum -y install npm python python-pip
@@ -207,4 +208,4 @@ recv_phone = "01028241085"
 if 0 < event:
     msg = "Event Hosts : %s" % event
     print(msg)
-#    SendSMS(recv_phone, msg)
+# SendSMS(recv_phone, msg)
