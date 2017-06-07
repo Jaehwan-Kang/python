@@ -19,6 +19,12 @@
 #   # 5분마다 실행
 #   */5 * * * * root /root/nagios_sms.py
 #
+#
+#
+#
+#
+#
+
 
 
 import json, subprocess, requests, sqlite3              # Load Modules
