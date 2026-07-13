@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-#   sms.py(Python2.x)  - kang.jh@cyebiz.com
+#   sms.py(Python2.x)  - by. lupang1085@gmail.com
 #
 #   Nagios  : status.dat
 #   SQLite3 : /root/nagios.db
@@ -27,7 +27,7 @@
 
 
 
-import json, subprocess, requests, sqlite3              # Load Modules
+import json, subprocess, requests, sqlite3
 
 ##########################
 #                        #
@@ -38,12 +38,12 @@ import json, subprocess, requests, sqlite3              # Load Modules
 class nagiosStatParsing:                                # nagiosStatParsing 클래스
 
     def sorting(self):                                  # sortiung 함수
-        global nagiPar                                  # 글로벌 변수
-        statlist = {}                                   # statlist 딕셔너리 초기화
+        global nagiPar
+        statlist = {}
         for item in nagiPar["servicestatus"]:
-            if 1 == item["current_state"]:              # 상태 1(warning) 일 경우  "이름":"상태" 딕셔너리 값 입력
+            if 1 == item["current_state"]:              # 상태 1(warning) 일 경우
                 statlist[item["host_name"]] = item["current_state"]
-            elif 2 == item["current_state"]:            # 상태 2(critical) 일 경우  "이름":"상태" 딕셔너리 값 입력
+            elif 2 == item["current_state"]:            # 상태 2(critical) 일 경우
                 statlist[item["host_name"]] = item["current_state"]
         return statlist
 
@@ -63,8 +63,8 @@ select_query = "select State_code from %s order by Date desc limit 0,1;"
 
 class sqlitedb:                                         # sqlitedb 클래스
 
-    def Update(self, Hosts):                            # Update 함수
-        conn = sqlite3.connect('/root/nagios.db')       # 디비 설정
+    def Update(self, Hosts):                            
+        conn = sqlite3.connect('/root/nagios.db')
         c = conn.cursor()
 
         c.execute(table_query)                          # 현재 디비내에 있는 모든 테이블명 조회
@@ -158,7 +158,7 @@ class sqlitedb:                                         # sqlitedb 클래스
 ##############
 
 # GET 요청시
-# http://sms.cyebiz.com/sms_send.php?type=sms&name=%EC%A1%B0%EC%97%B0%ED%98%B8&phone=01028241085&msg=TEST%20MESSAGE&callback=0263423352&apiKey=8a1b076d4da59d51eac3d59a2903c744
+# http://${URL}/sms_send.php?type=sms&name=%EC%A1%B0%EC%97%B0%ED%98%B8&phone=01028241085&msg=TEST%20MESSAGE&callback=0263423352&apiKey=8a1b076d4da59d51eac3d59a2903c744
 
 
 def SendSMS(phone, nagiosMessage):
@@ -166,10 +166,10 @@ def SendSMS(phone, nagiosMessage):
 
     NagiosMSG = nagiosMessage
 
-#    url = 'http://sms.cyebiz.com/sms_send.php'
-    url = 'http://sms.cyebiz.com/send'
+#    url = 'http://${URL}/sms_send.php'
+    url = 'http://${URL}/send'
     headers = {
-        'user-agent': 'CYEBIZ/1.0'
+        'user-agent': '${AGENT_NAME}'
     }
     postdata = {
         'type':'sms',
@@ -178,7 +178,7 @@ def SendSMS(phone, nagiosMessage):
         'name':'Nagios',
         'phone': phone_number,
         'msg': NagiosMSG,
-        'callback':'0263423352',
+        'callback':'${PHONE_NUMBER}',
         'apiKey':'',        # api'K'ey 대문자여야함
         'etc1':'',
         'etc2':'',
@@ -208,8 +208,8 @@ event = e2.Check(E)
 e2.Update(E)
 
 # Event SMS Sending
-recv_phone = "01028241085"
-#recv_phone = "01028241085,010xxxxxxxx"
+recv_phone = "${PHONE_NUMBER}"
+#recv_phone = "010xxxxxxxx,010xxxxxxxx"
 
 if 0 < event:
     msg = "Event Hosts : %s" % event

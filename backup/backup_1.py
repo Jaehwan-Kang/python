@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Usage) #./sister09_backup.py [web|db|conf]
+# Usage) #./backup_1.py [web|db|conf]
 #
 
 import sys, os, datetime
@@ -38,7 +38,7 @@ class Bakcup:
         date = datetime.date.today()
         rdate = date - datetime.timedelta(weeks=12)
 
-        target = ('baby09', 'sister09', 'thankyoudealer')
+        target = ('${NAME}', '${NAME}', '${NAME}')
 
         for i in target:
             os.popen("tar jcf %s/%s.%s.bz2 /home/%s --exclude=sess_*" % (webdir, i, date, i))

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Usage) #./teambox_backup.py [web|db|image]
+# Usage) #./backup_2.py [web|db|image]
 #
 
 import sys, os, datetime, pysftp
